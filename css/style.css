@@ -36,6 +36,12 @@
 }
 
 /* General Styles */
+
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--clr-light);
   color: var(--clr-dark);
@@ -188,6 +194,26 @@ header {
   z-index: 1000;
 }
 
+.nav-open .nav {
+  transform: translateX(0%);
+}
+
+.nav-open .nav-toggle {
+  position: fixed;
+}
+
+.nav-open .hamburguer {
+  transform: rotate(0.625turn);
+}
+
+.nav-open .hamburguer::before {
+  transform: rotate(90deg) translateX(-6px);
+}
+
+.nav-open .hamburguer::after {
+  opacity: 0;
+}
+
 .hamburguer {
   display: block;
   position: relative;
@@ -196,7 +222,7 @@ header {
 .hamburguer,
 .hamburguer::before,
 .hamburguer::after {
-  background: var(--clr-dark);
+  background: var(--clr-accent);
   width: 2em;
   height: 3px;
   border-radius: 1em;
